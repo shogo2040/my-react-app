@@ -6,5 +6,7 @@ workflows:
   node-tests:
     jobs:
       - node/test
+  code-coverage:
+    jobs:
       - codecov/upload
         file: coverage/*.json

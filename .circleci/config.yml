@@ -3,10 +3,9 @@ orbs:
   node: circleci/node@3.0.0
   codecov: codecov/codecov@1.1.5
 
-jobs:
-  build:
-    steps:
-      - run: npm install
-      - run: npm test
-      - codecov/upload:
-        file: coverage/*.json
+build:
+  steps:
+    - run: npm install
+    - run: npm test
+    - codecov/upload:
+      file: coverage/*.json

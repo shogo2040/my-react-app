@@ -1,12 +1,10 @@
 version: 2.1
-orbs:
-  node: circleci/node@3.0.0
-  codecov: codecov/codecov@1.1.5
-jobs:
-  build:
-    macos:
-    steps:
-      - run: npm install
-      - run: npm test
-      - codecov/upload:
-        file: coverage/*.json
+  orbs:
+    node: circleci/node@3.0.0
+    codecov: codecov/codecov@1.1.5
+  workflows:
+    node-tests:
+      jobs:
+        - node/test
+        - codecov/upload
+          file: coverage/*.json

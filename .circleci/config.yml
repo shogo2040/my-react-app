@@ -8,9 +8,7 @@ jobs:
       name: node/default
     steps:
       - checkout
-      - node/with-cache:
-        steps:
-          - run: npm install
+      - run: npm install
       - run: npm test -- --coverage --watchAll=false
       - codecov/upload:
           file: coverage/*.json

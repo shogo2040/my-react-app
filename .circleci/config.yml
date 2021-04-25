@@ -4,6 +4,7 @@ orbs:
   codecov: codecov/codecov@1.1.5
 jobs:
   build:
+    context:
     executor:
       name: node/default
     steps:
@@ -12,3 +13,4 @@ jobs:
       - run: npm test -- --coverage --watchAll=false
       - codecov/upload:
           file: coverage/*.json
+          token: ${CODECOV_TOKEN}

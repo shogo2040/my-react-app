@@ -5,7 +5,6 @@ orbs:
 
 jobs:
   build:
-  - node/test
     steps:
       - run: npm install
       - run: npm test

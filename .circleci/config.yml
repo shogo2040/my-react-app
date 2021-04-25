@@ -4,6 +4,7 @@ orbs:
   codecov: codecov/codecov@1.1.5
 jobs:
   build:
+    macos:
     steps:
       - run: npm install
       - run: npm test

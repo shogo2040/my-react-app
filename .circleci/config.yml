@@ -1,7 +1,7 @@
 version: 2.1
 orbs:
   node: circleci/node@4.3
-  codecov: codecov/codecov@1.1.5
+  codecov: codecov/codecov@1.1.3
 jobs:
   build:
     context:
@@ -13,4 +13,3 @@ jobs:
       - run: npm test -- --coverage --watchAll=false
       - codecov/upload:
           file: coverage/*.json
-          token: ${CODECOV_TOKEN}

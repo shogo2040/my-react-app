@@ -8,5 +8,5 @@ workflows:
       - node/test
   code-coverage:
     jobs:
-      - codecov/upload
+      - codecov/upload:
         file: coverage/*.json
